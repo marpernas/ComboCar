@@ -1,22 +1,18 @@
+// src/pages/escolha/escolha.ts
+
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavParams } from 'ionic-angular';
 
-/*
-  Generated class for the EscolhaPage page.
 
-  See http://ionicframework.com/docs/v2/components/#navigation for more info on
-  Ionic pages and navigation.
-*/
 @Component({
-  selector: 'page-escolha',
-  templateUrl: 'escolha.html'
+    templateUrl: 'escolha.html'
 })
-export class EscolhaPagePage {
+export class EscolhaPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams) {}
+  public carro;
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad EscolhaPagePage');
+  constructor(public navParams: NavParams) {
+    
+    this.carro = navParams.get('carroSelecionado');
   }
-
 }
