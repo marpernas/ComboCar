@@ -1,14 +1,11 @@
 import { Component,OnInit } from '@angular/core';
-
 // importanto novo componente
 import { NavController,LoadingController,AlertController } from 'ionic-angular';
-
 // importando a classe do serviço
 import {Http} from '@angular/http';
-
-
 // não podemos esquecer de importar!!!
 import { EscolhaPage } from '../escolha/escolha';
+import { Carro } from "../../domain/carro/carro";
 
 
 @Component({
@@ -18,7 +15,7 @@ import { EscolhaPage } from '../escolha/escolha';
 
 export class HomePage implements OnInit {
 
-  public carros;
+  public carros: Carro[];
 
    constructor(
     public navCtrl: NavController, 

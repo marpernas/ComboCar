@@ -27,17 +27,23 @@
           ACESSÓRIOS
         </ion-item-divider>
 
-         <!-- construindo a lista de acessórios dinamicamente -->
+        <!-- construindo a lista de acessórios dinamicamente -->
         <ion-item *ngFor="let acessorio of acessorios">
           <ion-label>
             <h2>{{ acessorio.nome }}</h2>
             <h3>{{ acessorio.preco }}</h3>
           </ion-label>
-          <ion-toggle color="secondary"></ion-toggle>
+          <ion-toggle #toggle color="secondary" (ionChange)="atualizaTotal(toggle.checked,acessorio)"></ion-toggle>
         </ion-item>
       </ion-item-group>
 
+      <!-- exibe o preço total, aquele que é o somatório do preço do carro com o preço dos acessórios escolhidos -->
+
+      <ion-item-divider color="light">
+        TOTAL: R${{precoTotal}}
+      </ion-item-divider>
+
     </ion-card-content>
   </ion-card>
-  <button ion-button block>Avançar no agendamento</button>
+  <button ion-button block (click)="avancaNoAgendamento()">Avançar no agendamento</button>
 </ion-content>
